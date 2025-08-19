@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Dematera - Graphic Designer & Environmental Student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #0f172a;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        
+        .hero-pattern {
+            background-color: #f1f5f9;
+            background-image: radial-gradient(var(--primary) 0.5px, #f1f5f9 0.5px);
+            background-size: 10px 10px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item::before {
+                left: -28px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-10 bg-white/80 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-gray-800">Emmanuel<span class="gradient-text">Dematera</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-20 bg-white hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#about" class="text-xl text-gray-700 hover:text-blue-600">About</a>
+            <a href="#education" class="text-xl text-gray-700 hover:text-blue-600">Education</a>
+            <a href="#experience" class="text-xl text-gray-700 hover:text-blue-600">Experience</a>
+            <a href="#skills" class="text-xl text-gray-700 hover:text-blue-600">Skills</a>
+            <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">Contact</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-700 hover:text-red-500">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Emmanuel <span class="gradient-text">Dematera</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-700 mb-6">
+                        Graphic Designer & Environmental Students
+                    </h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Creative and detail-oriented professional with expertise in visual design and environmental science. 
+                        Skilled in Adobe Photoshop, branding, layout design, and technical instruction.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition text-center">
+                            Contact Me
+                        </a>
+                        <a href="#experience" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition text-center">
+                            My Experience
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-white rounded-full shadow-xl overflow-hidden">
+                        <img 
+                            src="C:\Users\PC-1\Downloads\picture.jpg" 
+                            alt="Professional headshot of Emmanuel Dematera, a graphic designer and environmental scientist, looking professional and confident" 
+                            class="w-full h-full object-cover"
+                            onerror="this.src='fallback-image.jpg'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-lg overflow-hidden shadow-lg">
+                        <img 
+                            src="C:\Users\PC-1\Downloads\Photos 2.jpg"
+                            alt="Emmanuel Dematera working on a graphic design project" 
+                            class="w-full h-full object-cover"
+                            onerror="this.src='fallback-image.jpg'">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a creative and detail-oriented Graphic Designer/Artist with a strong eye for visual design and 
+                        over 1 year of experience in print and digital design. I'm also a BS Environmental Science graduate 
+                        with interdisciplinary expertise that gives me a unique perspective in both creative and analytical work.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        My approach combines aesthetic sensibility with technical precision, whether I'm designing a brand 
+                        identity or analyzing environmental data. I thrive in collaborative environments where I can bring 
+                        ideas to life through compelling visual storytelling.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                            <span>emandematera@gmail.com</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-phone mr-2 text-blue-600"></i>
+                            <span>+639674481252</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                            <span>San Jose, Pili, Camarines Sur, Philippines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">My <span class="gradient-text">Education</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="relative pl-8 md:pl-16 mt-8">
+                <!-- Timeline for Central Bicol State University -->
+                <div class="relative timeline-item pl-8 pb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Central Bicol State University of Agriculture - Pili Campus</h3>
+                            <div class="text-blue-600 font-medium">2021 - 2025</div>
+                        </div>
+                        <p class="text-gray-600 font-medium mb-2">Bachelor of Science in Environmental Science</p>
+                        <p class="text-gray-600">
+                            Specialized in environmental analysis and sustainable development. Completed projects on environmental management, ecology, and conservation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline for San Jose Pili National High School -->
+                <div class="relative timeline-item pl-8 pb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">San Jose Pili National High School</h3>
+                            <div class="text-blue-600 font-medium">2018 - 2020</div>
+                        </div>
+                        <p class="text-gray-600">
+                            Completed senior high school with a focus on academic excellence and extracurricular involvement.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Vertical line for timeline -->
+                <div class="absolute left-0 top-0 h-full w-1 bg-blue-200 md:left-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional <span class="gradient-text">Experience</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">My diverse professional journey across graphic design, computer instruction, and environmental science.</p>
+            </div>
+            
+            <div class="relative pl-8 md:pl-16 mt-8">
+                <!-- Graphic Designer Experience -->
+                <div class="relative timeline-item pl-8 pb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Graphic Designer/Artist/Data Encoder</h3>
+                            <div class="text-blue-600 font-medium">Feb 2018 - Jul 2018</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-medium">Meloracs Enterprises</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Developed visual concepts and design layouts for print and digital materials</li>
+                            <li>Selected and arranged design elements, edited images, and applied branding guidelines</li>
+                            <li>Revised work based on feedback and prepared final outputs for publishing or printing</li>
+                            <li>Managed multiple projects while staying updated on design trends to ensure contemporary output</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Computer System Trainer Experience -->
+                <div class="relative timeline-item pl-8 pb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Trainor, Computer System Servicing NC II</h3>
+                            <div class="text-blue-600 font-medium">Mar 2023 - Aug 2023</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-medium">Global IT Naga</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Taught computer hardware servicing, software installation, and basic networking skills</li>
+                            <li>Prepared lessons, training materials, and conducted assessments for students</li>
+                            <li>Managed ICT tools and ensured safety in the training environment</li>
+                            <li>Mentored students in workplace values and essential technical skills</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Environmental Science Intern Experience -->
+                <div class="relative timeline-item pl-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Environmental Science Intern</h3>
+                            <div class="text-blue-600 font-medium">Jul 2024 - Aug 2024</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-medium">ECO Cycen Hatchery - 6 n 1 Company</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Assisted in egg collection, classification, and preparation for incubation</li>
+                            <li>Monitored embryo development and tracked hatching dates</li>
+                            <li>Supported hatching process by handling chicks and recording data on hatch rates and quality</li>
+                            <li>Gained hands-on experience in sustainable livestock production practices</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Vertical line for timeline -->
+                <div class="absolute left-0 top-0 h-full w-1 bg-blue-200 md:left-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">My <span class="gradient-text">Skills</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">The diverse set of technical and soft skills I've developed through education and professional experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Design Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                            <i class="fas fa-palette text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Design Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Adobe Photoshop</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Branding</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Layout Design</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Illustration</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Digital & Print</span>
+                    </div>
+                </div>
+                
+                <!-- Technical Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Technical Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Computer Hardware</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Software Installation</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Basic Networking</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Data Entry</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Task Management</span>
+                    </div>
+                </div>
+                
+                <!-- Environmental Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Environmental Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Data Collection</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Environmental Analysis</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Sustainability</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Field Work</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Research</span>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Critical Thinking</span>
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Leadership</span>
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Communication</span>
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Time Management</span>
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Certifications & <span class="gradient-text">Awards</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Certifications -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Certifications</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-certificate text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Computer System Servicing NC II</h4>
+                                    <p class="text-gray-600 mt-1">Certified in computer hardware servicing and maintenance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-certificate text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Intro to Visual Graphic Design</h4>
+                                    <p class="text-gray-600 mt-1">Fundamentals of graphic design principles and techniques</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Awards -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Awards</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-yellow-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-trophy text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Best in Major Field of Specialization</h4>
+                                    <p class="text-gray-600 mt-1">2025 - Recognized academic excellence in Environmental Science</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-yellow-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-medal text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">2nd Place, Best in Case Study</h4>
+                                    <p class="text-gray-600 mt-1">2024 - Intensive Programme (Belgium)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact <span class="gradient-text">Information</span></h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="w-full max-w-2xl">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">How to Reach Me</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-700 font-medium">Email</h4>
+                                    <p class="text-gray-600">emandematera@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-700 font-medium">Phone</h4>
+                                    <p class="text-gray-600">+639674481252</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-md mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-700 font-medium">Location</h4>
+                                    <p class="text-gray-600">San Jose, Pili, Camarines Sur, Philippines</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 Emmanuel Dematera. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-behance text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-dribbble text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
